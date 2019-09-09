@@ -1,12 +1,12 @@
 FROM badgerati:pode:1.0.1
 
 # Update
-apt-get Update
+RUN apt-get Update
 
 
 # Install AZ CLI
-apt-get install curl -y
-curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+RUN apt-get install curl -y
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 
 # Install AWS CLI
