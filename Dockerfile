@@ -14,3 +14,9 @@ RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 # Install AWS CLI + S3CMD
 RUN pip3 install awscli --upgrade --user
 RUN apt-get install s3cmd -y
+
+# Update PATH (Mainly for aws)
+RUN export PATH=~/.local/bin:$PATH
+ENV PATH="~/.local/bin:${PATH}"
+RUN export PATH=/root/.local/bin:$PATH
+ENV PATH="/root/.local/bin:${PATH}"
